@@ -15,9 +15,14 @@
     }
 
 	onMount(async () => {
-		const res = await fetch(`${URL}/memories/`);
-		memories = await res.json();
-        isMemoriesLoading = false;
+        try {
+            const res = await fetch(`${URL}/memories/`);
+		    memories = await res.json();
+            isMemoriesLoading = false;
+        } catch (e) {
+            console.log(e)
+            isMemoriesLoading = false;
+        }
 	});
 
 </script>
@@ -33,7 +38,7 @@
     {:else}
         {#each memories as memory, i}
             <Link on:click={setMemoryTitle(memory.title)} to={`memories/${memory.id}`}>
-                <p>asdfsfsdfs</p>
+                <p>{memory.title}</p>
             </Link>
         {/each}
     {/if}

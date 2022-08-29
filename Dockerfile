@@ -9,8 +9,8 @@ COPY ./frontend /usr/app/frontend
 #Устанавливаем зависимости
 RUN npm install
 #Делаем так, чтобы порт был доступен вне контейнера
-EXPOSE 8080
-EXPOSE 24678
+EXPOSE 5173
+EXPOSE 4173
 
 #Устанавливаем рабочую директорию backend в докер контейнере
 WORKDIR /usr/app/backend

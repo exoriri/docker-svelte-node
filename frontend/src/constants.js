@@ -1,1 +1,1 @@
-export const URL = JSON.parse('isProduction') === false ? 'http://localhost:1000' : 'prodIp';
+export const URL = 'isProduction' !== false ? 'http://127.0.0.1:1000' : 'prodIp';

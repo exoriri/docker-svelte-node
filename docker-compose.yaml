@@ -8,7 +8,8 @@ services:
       - /usr/app/frontend/node_modules
     working_dir: /usr/app/frontend
     ports:
-      - "8080:8080"
+      - "5173:5173"
+      - "4173:4173"
     command: sh -c "npm run dev"
   backend:
     build: 

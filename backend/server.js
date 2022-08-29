@@ -16,8 +16,9 @@ const HOST = process.env.NODE_ENV === 'production' ? getLocalExternalIp() : '127
 
 app.use(cors({
     origin: [
-        `http://${HOST}:8080`,
-        `http://localhost:8080`
+        `http://${HOST}:5173`,
+        'http://localhost:5173',
+        'http://localhost:4173',
     ]
 }));
 app.use(express.static('public'));
