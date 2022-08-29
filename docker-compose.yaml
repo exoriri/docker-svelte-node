@@ -1,0 +1,23 @@
+services:
+  frontend:
+    build: 
+      context: ./
+      target: dev
+    volumes:
+      - ./frontend:/usr/app/frontend
+      - /usr/app/frontend/node_modules
+    working_dir: /usr/app/frontend
+    ports:
+      - "8080:8080"
+    command: sh -c "npm run dev"
+  backend:
+    build: 
+      context: ./
+      target: dev
+    volumes:
+      - ./backend:/usr/app/backend
+      - /usr/app/backend/node_modules
+    working_dir: /usr/app/backend
+    ports:
+      - "1000:1000"
+    command: sh -c "npm run dev"

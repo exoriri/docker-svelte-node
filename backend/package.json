@@ -1,0 +1,24 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "backend for docker youtube example",
+  "main": "server.js",
+  "scripts": {
+    "dev": "nodemon --legacy-watch server.js",
+    "start": "node server.js"
+  },
+  "keywords": [
+    "nodejs",
+    "docker",
+    "svelte"
+  ],
+  "author": "exoriri",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.19"
+  }
+}
