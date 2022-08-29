@@ -1,24 +1,40 @@
+#service - наши образы(images)
 services:
+  #Название первого образа
   frontend:
     build: 
+      #В какой директории лежит Dockerfile
       context: ./
+      #stage. Окружение production or dev
       target: dev
+    #Синхронизируем папки локального хоста(машины) в докер образ
     volumes:
       - ./frontend:/usr/app/frontend
       - /usr/app/frontend/node_modules
+    #Директория в докер образе
     working_dir: /usr/app/frontend
+    #синхронизируем локальные порты и порты докер образа. 
+    #Порт до двоеточия - это локальный, после докер обрза
     ports:
       - "5173:5173"
       - "4173:4173"
+    #Команда для запуска frontend
     command: sh -c "npm run dev"
+  #Название второго образа
   backend:
     build: 
+      #stage. Окружение production or dev
       context: ./
+      #stage. Окружение production or dev
       target: dev
+    #Синхронизируем папки локального хоста(машины) в докер образ
     volumes:
       - ./backend:/usr/app/backend
       - /usr/app/backend/node_modules
+    #Директория в докер образе
     working_dir: /usr/app/backend
+    #Порт до двоеточия - это локальный, после докер обрза
     ports:
       - "1000:1000"
+    #Команда для запуска backend
     command: sh -c "npm run dev"

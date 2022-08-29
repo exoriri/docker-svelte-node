@@ -12,7 +12,7 @@ const getLocalExternalIp = () => {
     return settings.filter((details) => details.family === 'IPv4' && !details.internal).pop().address;
 }; 
 
-const HOST = process.env.NODE_ENV === 'production' ? getLocalExternalIp() : '127.0.0.1';
+const HOST = process.env.NODE_ENV === 'production' ? getLocalExternalIp() : '0.0.0.0';
 
 app.use(cors({
     origin: [

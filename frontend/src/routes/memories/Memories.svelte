@@ -1,5 +1,5 @@
 <script>
-    import { Link } from 'svelte-navigator';
+    import { link } from 'svelte-navigator';
     import { onMount } from 'svelte'; 
     import { URL } from '../../constants';
     import {selectedMemoryTitle} from '../../stores';
@@ -28,7 +28,9 @@
 </script>
 
 <style>
-    
+    .link {
+        text-decoration: none;
+    }
 </style>
 
 <nav>
@@ -37,9 +39,9 @@
         <div>Загрузка...</div>
     {:else}
         {#each memories as memory, i}
-            <Link on:click={setMemoryTitle(memory.title)} to={`memories/${memory.id}`}>
+            <a class="link" use:link on:click={setMemoryTitle(memory.title)} href={`memories/${memory.id}`}>
                 <p>{memory.title}</p>
-            </Link>
+            </a>
         {/each}
     {/if}
 

@@ -5,6 +5,13 @@
 
 </script> 
 
+<style>
+	@import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz@8..144&display=swap');
+	* {
+		font-family: 'Roboto Flex', sans-serif;
+	}
+</style>
+
 <div>
 	<Router >
 		<Route primary={false} path="/" component={Memories} />
